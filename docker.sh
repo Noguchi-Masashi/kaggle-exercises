@@ -1,0 +1,1 @@
+docker run -v $PWD:/working -p 8888:8888 --gpus all --shm-size=8gb --rm -it --shm-size 8gb gcr.io/kaggle-gpu-images/python jupyter lab --port=8888 --ip=0.0.0.0 --allow-root
