@@ -7,7 +7,7 @@ kaggleに共通したTIPS
 
 テストデータのサイズは普通公開されるので，Discussionを漁るのだ．
 
-画像コンペは有名なNNが使われるので，前処理や損失関数の設計の工夫で差が出やすい
+画像コンペは有名なNNが使われるので，前処理や損失関数の設計の工夫で差が出やすいのだ
 
 ## CVについて
 CVの目的は，訓練データ→ 訓練データと検証データに分割し，手元でスコアの検証をすること
@@ -62,16 +62,30 @@ Kaggle API 1.5.12
 参考：[Kaggle をコマンドラインで操作する](https://blog.amedama.jp/entry/2018/05/03/031551)
 
 ## データのダウンロード
+コンペティションに必要なデータのダウンロード
 ``` bash
 $ mkdir input  # input というフォルダ名が推奨
 $ cd input/
 $ kaggle competitions download -c <competition-name>
 # 403 - Forbidden が出力された場合，「accept the Terms and Condition」忘れの可能性あり
-$ unzip -d riiid-test-answer-prediction/ riiid-test-answer-prediction.zip
-
+$ unzip -d <dataset_name>/ <dataset_name>.zip
 ```
+実行したいノートブックに必要なデータもダウンロードするのだ．必要なデータはノートブックの\[Data\]タブをクリックして確認するのだ．
 
-# ノートブックのダウンロード
+## ノートブックのダウンロード
+「Copy API command」で得られたコマンドをそのまま実行すれば，ノートブックはダウンロードできるのだ．
+
+`kaggle kernels pull <notebook>` になっているコマンドなのだ．
+
+ノートブックのフォルダ名はinputと同じ階層に作るのだ．名前は任意でよくて，僕は「protos」か「notebook」にしているのだ．
+
 ``` bash
-$ 
+$ mkdir protos
+$ cd protos
+$ kaggle kernels pull <notebook>
 ```
+## フォルダ・ファイル名にハイフン「-」がある場合
+
+
+
+## 【2位入賞】ずんだもんとめたんで学ぶKaggle 入門 & 参戦記 Part 3【Petfinderコンペ】【修正版】
